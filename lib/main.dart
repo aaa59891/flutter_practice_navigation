@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/widgets/home.dart';
+import 'package:my_app/screens/categories_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Personal Expenses',
-      home: Home(),
+      home: CategoriesScreen(),
       theme: ThemeData(
         primarySwatch: Colors.brown,
         accentColor: Colors.orange,
