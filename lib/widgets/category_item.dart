@@ -9,7 +9,10 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Text(category.title),
+      child: Text(
+        category.title,
+        style: Theme.of(context).textTheme.title,
+      ),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [

@@ -10,16 +10,20 @@ class MyApp extends StatelessWidget {
       title: 'Personal Expenses',
       home: CategoriesScreen(),
       theme: ThemeData(
-        primarySwatch: Colors.brown,
-        accentColor: Colors.orange,
-        fontFamily: 'Quicksand',
+        primarySwatch: Colors.pink,
+        accentColor: Colors.amber,
+        fontFamily: 'Raleway',
+        canvasColor: Color.fromRGBO(255, 254, 229, 1),
         textTheme: ThemeData.light().textTheme.copyWith(
-              title: TextStyle(
-                fontSize: 18,
-                fontFamily: 'OpenSans',
+              body1: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
               ),
-              button: TextStyle(
-                color: Colors.white,
+              body2: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              title: TextStyle(
+                fontSize: 24,
+                fontFamily: 'RobotoCondensed',
               ),
             ),
         appBarTheme: AppBarTheme(
