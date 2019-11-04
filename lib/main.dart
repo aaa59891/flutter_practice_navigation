@@ -3,6 +3,7 @@ import 'package:my_app/constants/styles.dart';
 import 'package:my_app/routes.dart';
 import 'package:my_app/screens/categories_screen.dart';
 import 'package:my_app/screens/category_meals_screen.dart';
+import 'package:my_app/screens/meal_detail_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         ERoutes.CategoryMealsScreen: (_) => CategoryMealsScreen(),
+        ERoutes.MealDetailScreen: (_) => MealDetailScreen(),
       },
     );
   }

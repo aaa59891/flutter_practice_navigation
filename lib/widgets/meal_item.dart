@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/constants/styles.dart';
 import 'package:my_app/models/meal.dart';
+import 'package:my_app/routes.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
@@ -32,11 +33,21 @@ class MealItem extends StatelessWidget {
     }
   }
 
+  void Function() _onTap(BuildContext context) {
+    return () {
+      Navigator.pushNamed(
+        context,
+        ERoutes.MealDetailScreen,
+        arguments: this.meal,
+      );
+    };
+  }
+
   @override
   Widget build(BuildContext context) {
     final imageBorderRadius = Radius.circular(CardStyle.borderRadius);
     return InkWell(
-      onTap: () {},
+      onTap: this._onTap(context),
       child: Card(
         child: Column(
           children: <Widget>[
