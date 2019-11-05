@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/constants/styles.dart';
 import 'package:my_app/routes.dart';
-import 'package:my_app/screens/categories_screen.dart';
 import 'package:my_app/screens/category_meals_screen.dart';
 import 'package:my_app/screens/meal_detail_screen.dart';
+import 'package:my_app/screens/tabs_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Personal Expenses',
-      home: CategoriesScreen(),
       theme: ThemeData(
         primarySwatch: Colors.pink,
         accentColor: Colors.amber,
@@ -48,6 +47,7 @@ class MyApp extends StatelessWidget {
               ),
         ),
       ),
+      home: TabsScreen(),
       routes: {
         ERoutes.CategoryMealsScreen: (_) => CategoryMealsScreen(),
         ERoutes.MealDetailScreen: (_) => MealDetailScreen(),
