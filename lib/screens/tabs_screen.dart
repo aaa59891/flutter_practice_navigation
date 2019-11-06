@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/categories_screen.dart';
 import 'package:my_app/screens/favorite_screen.dart';
+import 'package:my_app/widgets/main_drawer.dart';
 
 class TabsScreen extends StatefulWidget {
   @override
@@ -23,8 +24,9 @@ class _TabsScreenState extends State<TabsScreen> {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(this._screens[this._index][EPageKeys]),
+        title: Text(this._screens[this._index][EPageKeys.TITLE]),
       ),
+      drawer: MainDrawer(),
       body: this._screens[this._index][EPageKeys.WIDGET],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: theme.primaryColor,

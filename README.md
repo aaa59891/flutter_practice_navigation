@@ -13,3 +13,6 @@
         - combine with scaffold and TabBarView, set the length, tabs and the widgets to show
     - BottomNavigationBar
         - BottomNavigationBarItem
+6. drawer
+    - add Drawer in scaffold
+
