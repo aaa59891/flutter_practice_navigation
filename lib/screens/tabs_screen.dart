@@ -7,35 +7,45 @@ class TabsScreen extends StatefulWidget {
   _TabsScreenState createState() => _TabsScreenState();
 }
 
+enum EPageKeys {
+  WIDGET,
+  TITLE,
+}
+
 class _TabsScreenState extends State<TabsScreen> {
+  int _index = 0;
+  final List<Map<EPageKeys, Object>> _screens = const [
+    {EPageKeys.WIDGET: const CategoriesScreen(), EPageKeys.TITLE: 'Categories'},
+    {EPageKeys.WIDGET: const FavoriteScreen(), EPageKeys.TITLE: 'Favorites'},
+  ];
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('Tabs screen'),
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(
-                icon: Icon(
-                  Icons.category,
-                ),
-                text: 'Categories',
-              ),
-              Tab(
-                icon: Icon(Icons.star),
-                text: 'Favorite',
-              ),
-            ],
+    final theme = Theme.of(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(this._screens[this._index][EPageKeys]),
+      ),
+      body: this._screens[this._index][EPageKeys.WIDGET],
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: theme.primaryColor,
+        unselectedItemColor: Colors.white,
+        selectedItemColor: theme.accentColor,
+        currentIndex: this._index,
+        onTap: (index) {
+          this.setState(() {
+            this._index = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.category),
+            title: Text('Categories'),
           ),
-        ),
-        body: TabBarView(
-          children: <Widget>[
-            CategoriesScreen(),
-            FavoriteScreen(),
-          ],
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.star),
+            title: Text('Favorite'),
+          ),
+        ],
       ),
     );
   }

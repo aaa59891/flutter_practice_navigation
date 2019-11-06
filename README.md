@@ -11,3 +11,5 @@
 5. tabs
     - DefaultTabController
         - combine with scaffold and TabBarView, set the length, tabs and the widgets to show
+    - BottomNavigationBar
+        - BottomNavigationBarItem
