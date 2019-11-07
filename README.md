@@ -15,4 +15,7 @@
         - BottomNavigationBarItem
 6. drawer
     - add Drawer in scaffold
+7. Navigator.push
+    - the result from this promise is not when we get the new page successfully, it's when the new page calls pop and return to current page
+8. initState cannot get the context because it's running before the context, if we need the context to init something, can use `didChangeDependencies`, but this function will be triggered everytime when the status is changed
 

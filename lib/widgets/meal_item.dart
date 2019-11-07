@@ -5,7 +5,8 @@ import 'package:my_app/routes.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
-  MealItem(this.meal);
+  final void Function(Meal) removeMeal;
+  MealItem({this.meal, this.removeMeal});
 
   String get complexity {
     switch (this.meal.complexity) {
@@ -39,7 +40,13 @@ class MealItem extends StatelessWidget {
         context,
         ERoutes.MealDetailScreen,
         arguments: this.meal,
-      );
+      ).then((result) {
+        if (result == null) {
+          return;
+        }
+
+        this.removeMeal(result);
+      });
     };
   }
 
